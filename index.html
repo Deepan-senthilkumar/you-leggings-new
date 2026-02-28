@@ -25,29 +25,45 @@
   <!-- Navigation -->
   <header class="header">
     <div class="container nav-container">
-      <a href="#" class="logo">
+      <a href="index.html#home" class="logo">
         <img src="./images/logo.png" alt="You Leggings Logo">
       </a>
 
       <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Shop</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact Us</a>
+        <a href="index.html#home">Home</a>
+        <a href="?page=about">About Us</a>
+        <a href="?page=shop">Shop</a>
+        <a href="?page=new-arrivals">New Arrivals</a>
+        <a href="?page=blog">Blog</a>
+        <a href="?page=contact">Contact Us</a>
       </nav>
 
       <div class="nav-icons text-dark">
-        <i data-lucide="search"></i>
-        <i data-lucide="user"></i>
-        <i data-lucide="shopping-bag"></i>
+        <button id="searchToggleBtn" class="nav-icon-btn" type="button" aria-label="Search">
+          <i data-lucide="search"></i>
+        </button>
+        <button id="loginPageBtn" class="nav-icon-btn" type="button" aria-label="Account">
+          <i data-lucide="user"></i>
+        </button>
+        <button id="cartPageBtn" class="nav-icon-btn" type="button" aria-label="Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span id="cartCountBadge" class="cart-count-badge" aria-live="polite">0</span>
+        </button>
+      </div>
+      <div id="headerSearchBar" class="header-search" aria-hidden="true">
+        <div class="header-search-row">
+          <input type="text" placeholder="Search products..." aria-label="Search products">
+          <button id="searchCloseBtn" class="header-search-close" type="button" aria-label="Close Search">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div id="headerSearchResults" class="header-search-results" aria-label="Search Results"></div>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero home-page-section" id="home">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="LEGGINGS.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -56,12 +72,12 @@
     <div class="hero-content">
       <span class="hero-subtitle">Premium Collection 2026</span>
       <h1 class="hero-title">Experience <br>True Comfort</h1>
-      <a href="#shop" class="btn hero-btn">Shop The Collection</a>
+      <a href="?page=shop" class="btn hero-btn">Shop The Collection</a>
     </div>
   </section>
 
   <!-- Collections Section -->
-  <section class="section" id="collections">
+  <section class="section home-page-section" id="shop">
     <div class="container">
       <div class="text-center">
         <span class="section-subtitle">Our Range</span>
@@ -70,7 +86,7 @@
       </div>
 
       <div class="products-grid">
-        <a href="#" class="product-card">
+        <a href="?page=shop" class="product-card">
           <div class="product-image">
             <img src="./images/Products/_DSC8742-Edit.jpg" alt="Men's Collection">
           </div>
@@ -79,7 +95,7 @@
             <div class="product-price">View Details</div>
           </div>
         </a>
-        <a href="#" class="product-card">
+        <a href="?page=shop" class="product-card">
           <div class="product-image">
             <img src="./images/Products/_DSC8832.jpg" alt="Full Length Leggings">
           </div>
@@ -88,7 +104,7 @@
             <div class="product-price">Shop Range</div>
           </div>
         </a>
-        <a href="#" class="product-card">
+        <a href="?page=shop" class="product-card">
           <div class="product-image">
             <img src="./images/Products/_DSC8128-Edit.jpg" alt="Ankle Length Leggings">
           </div>
@@ -97,7 +113,7 @@
             <div class="product-price">Discover</div>
           </div>
         </a>
-        <a href="#" class="product-card">
+        <a href="?page=shop" class="product-card">
           <div class="product-image">
             <img src="./images/Products/_DSC8533-Edit.jpg" alt="Kids Leggings">
           </div>
@@ -109,64 +125,997 @@
       </div>
     </div>
   </section>
+  <!-- About Page -->
+  <section class="section about-page" id="about-page">
+    <div class="about-main">
+      <div class="about-main-overlay"></div>
+      <div class="container about-main-content">
+        <span class="hero-subtitle">About You Leggings</span>
+        <h1 class="hero-title">Comfort Without <br>Compromise</h1>
+      </div>
+    </div>
 
-  <!-- Features Section (Why Choose Us / What Makes Different) -->
-  <section class="features-section">
-    <div class="container text-center">
-      <span class="section-subtitle">Our Expertise</span>
-      <h2 class="section-title">What Makes You Leggings Different</h2>
-      <p class="section-desc">Experience the perfect blend of tradition and modernity with our wide range of styles
-        designed for the contemporary woman.</p>
+    <div class="container page-body">
+      <div class="about-hero">
+        <span class="section-subtitle">Our Story</span>
+        <h2 class="section-title">Built on TANTEX Legacy, Designed for Every Woman</h2>
+      </div>
 
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="star"></i>
+      <div class="about-story-split">
+        <div class="about-story-card">
+          <div class="about-story-content">
+            <span class="about-story-tag">Our Promise</span>
+            <h3>Everyday Comfort, Premium Feel</h3>
+            <p>At You Legging, we believe every woman deserves comfort without compromise. Born from the trusted
+              legacy of TANTEX, we create bottom wear that blends affordability with high-end quality.</p>
+            <p>Our leggings are crafted with premium fabrics for a flattering fit, dependable stretch, and
+              long-lasting durability that stays soft wash after wash.</p>
+            <ul class="about-story-list">
+              <li>A perfect fit that flatters every body type</li>
+              <li>Stretch that adapts to your lifestyle</li>
+              <li>Durability that lasts wash after wash</li>
+            </ul>
+            <p>Whether you are at work, running errands, or relaxing at home, You Legging moves with you.</p>
           </div>
-          <h4 class="step-title">Classic Leggings</h4>
-          <p class="step-desc">Timeless comfort for everyday wear.</p>
+          <div class="about-story-image">
+            <img src="./images/Products/_DSC8682-Edit.jpg" alt="You Leggings Our Story">
+          </div>
         </div>
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="move"></i>
-          </div>
-          <h4 class="step-title">Ankle-Length</h4>
-          <p class="step-desc">Modern cuts for a sleek silhouette.</p>
+      </div>
+
+      <div class="about-why">
+        <h2 class="section-title">Why Choose You Leggings?</h2>
+        <div class="about-why-grid">
+          <article class="about-why-card">
+            <h3>From TANTEX Legacy</h3>
+            <p>A trusted brand foundation with years of quality experience.</p>
+          </article>
+          <article class="about-why-card">
+            <h3>Zero Compromise Quality</h3>
+            <p>Premium fabrics, carefully tested for fit, comfort, and durability.</p>
+          </article>
+          <article class="about-why-card">
+            <h3>Affordable Luxury</h3>
+            <p>High-end feel at market-friendly prices for everyday wear.</p>
+          </article>
+          <article class="about-why-card">
+            <h3>Everyday Versatility</h3>
+            <p>Designed for work, play, travel, and everything in between.</p>
+          </article>
+          <article class="about-why-card">
+            <h3>Wide Range of Choices</h3>
+            <p>Colors, styles, and fits made for every woman.</p>
+          </article>
         </div>
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="palette"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Page -->
+  <section class="section page-view shop-page" id="shop-page">
+    <div class="page-main shop-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8937-Photoroom.png'); background-size: auto 130%; background-position: right 100% top 50%; background-repeat: no-repeat; transform: scaleX(-1); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Shop Collection</span>
+        <h1 class="hero-title">Premium Leggings <br>For Every Move</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="text-center">
+        <span class="section-subtitle">Curated Picks</span>
+        <h2 class="section-title">Shop Products</h2>
+      </div>
+      <div class="shop-layout">
+        <aside class="shop-filters">
+          <div class="filter-group">
+            <h3>Price Filter</h3>
+            <p class="filter-range">&#8377;0 — &#8377;2,500</p>
+            <input type="range" min="0" max="2500" value="2500">
           </div>
-          <h4 class="step-title">Printed</h4>
-          <p class="step-desc">Vibrant patterns that express yourself.</p>
+          <div class="filter-group">
+            <h3>Categories</h3>
+            <ul class="filter-list">
+              <li><label><input type="checkbox"> YOU FULL LENGTH LEGGINGS</label></li>
+              <li><label><input type="checkbox"> YOU ANKLE LENGTH LEGGINGS</label></li>
+              <li><label><input type="checkbox"> YOU KIDS LEGGINGS</label></li>
+              <li><label><input type="checkbox"> MERLYN FULL LENGTH LEGGINGS</label></li>
+            </ul>
+          </div>
+
+          <div class="filter-group">
+            <h3>Sort</h3>
+            <ul class="filter-list">
+              <li><label><input type="radio" name="sort"> Discount</label></li>
+              <li><label><input type="radio" name="sort"> Price</label></li>
+            </ul>
+          </div>
+          <div class="filter-group">
+            <h3>Availability</h3>
+            <ul class="filter-list">
+              <li><label><input type="checkbox"> In Stock</label></li>
+              <li><label><input type="checkbox"> Out of Stock</label></li>
+            </ul>
+          </div>
+          <div class="filter-group">
+            <h3>Size</h3>
+            <ul class="filter-list filter-size">
+              <li><label><input type="checkbox"> XS</label></li>
+              <li><label><input type="checkbox"> S</label></li>
+              <li><label><input type="checkbox"> M</label></li>
+              <li><label><input type="checkbox"> L</label></li>
+              <li><label><input type="checkbox"> XL</label></li>
+              <li><label><input type="checkbox"> 2XL</label></li>
+              <li><label><input type="checkbox"> 3XL</label></li>
+              <li><label><input type="checkbox"> 4XL</label></li>
+              <li><label><input type="checkbox"> 5XL</label></li>
+            </ul>
+          </div>
+          <button id="clearShopFiltersBtn" class="shop-clear-filters" type="button">Clear Filters</button>
+        </aside>
+        <div class="shop-products">
+          <div class="products-grid">
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8045-Edit.jpg" alt="Nude Comfort Ankle Legging">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Ankle Length</p>
+                <h3 class="product-name">Nude Comfort Ankle</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 549</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8962.jpg" alt="Cobalt Core Legging">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Active Legging</p>
+                <h3 class="product-name">Cobalt Core Legging</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 599</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC9026-Edit.jpg" alt="Aqua Flex Active Legging">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Gym Wear</p>
+                <h3 class="product-name">Aqua Flex Active</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 649</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC7885-Edit.jpg" alt="Neon Move Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Lifestyle Set</p>
+                <h3 class="product-name">Neon Move Set</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 699</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC7786-Edit.jpg" alt="Scarlet Sport Fit">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Performance</p>
+                <h3 class="product-name">Scarlet Sport Fit</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 629</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8785-Edit.jpg" alt="Floral Blush Pair">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Style Pair</p>
+                <h3 class="product-name">Floral Blush Pair</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 679</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC7839-Edit.jpg" alt="Olive Essential Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Essential Wear</p>
+                <h3 class="product-name">Olive Essential Set</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 639</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8871-Edit.jpg" alt="Mint Aura Kurti Legging">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Kurti Legging</p>
+                <h3 class="product-name">Mint Aura Kurti Legging</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 569</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8659-Edit.jpg" alt="Indigo Flare Bottom">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Flare Bottom</p>
+                <h3 class="product-name">Indigo Flare Bottom</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 719</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC7901-Edit.jpg" alt="Teal Grace Kurti Fit">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Kurti Fit</p>
+                <h3 class="product-name">Teal Grace Kurti Fit</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 589</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC7937-Edit.jpg" alt="Emerald Dot Kurta Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Kurta Set</p>
+                <h3 class="product-name">Emerald Dot Kurta Set</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 739</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8742-Edit.jpg" alt="Citrus Classic Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Classic Pair</p>
+                <h3 class="product-name">Citrus Classic Set</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 689</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8065-Edit.jpg" alt="Orchid Everyday Kurti">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Everyday Wear</p>
+                <h3 class="product-name">Orchid Everyday Kurti</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 619</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8116-Edit.jpg" alt="Plum Luxe Co-ord">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Co-ord Set</p>
+                <h3 class="product-name">Plum Luxe Co-ord</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 769</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8922.jpg" alt="Mustard Gleam Kurti">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Kurti Combo</p>
+                <h3 class="product-name">Mustard Gleam Kurti</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 659</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8810.jpg" alt="Ruby Festive Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Festive Edit</p>
+                <h3 class="product-name">Ruby Festive Set</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 729</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8352-Edit.jpg" alt="Crimson Asym Tunic Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Tunic Set</p>
+                <h3 class="product-name">Crimson Asym Tunic</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 709</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8489-Edit.jpg" alt="Ivory Print Lounge Set">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Lounge Set</p>
+                <h3 class="product-name">Ivory Print Lounge</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 579</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8432-Edit.jpg" alt="Sunrise Everyday Fit">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Daily Wear</p>
+                <h3 class="product-name">Sunrise Everyday Fit</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 609</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8510-Edit.jpg" alt="Coral Motion Pair">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Ankle Length</p>
+                <h3 class="product-name">Coral Motion Pair</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 629</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8533-Edit.jpg" alt="Active Blue Flex">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Active Legging</p>
+                <h3 class="product-name">Active Blue Flex</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 639</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8587-Edit.jpg" alt="Cherry Street Edit">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Fashion Pair</p>
+                <h3 class="product-name">Cherry Street Edit</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 659</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8716-Edit.jpg" alt="Azure Comfort Line">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Full Length</p>
+                <h3 class="product-name">Azure Comfort Line</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 669</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card shop-product-card">
+              <div class="product-image">
+                <img src="./images/Products/_DSC8189.jpg" alt="Classic Move Essential">
+              </div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">Classic Fit</p>
+                <h3 class="product-name">Classic Move Essential</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">INR 589</div>
+                  <a href="#" class="shop-product-link">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="droplet"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Detail Page -->
+  <section class="section page-view product-page" id="product-page">
+    <div class="page-main product-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8984-Photoroom.png'); background-size: auto 120%; background-position: right 100% top 50%; background-repeat: no-repeat; transform: scaleX(-1); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Product Details</span>
+        <h1 class="hero-title">Buy Your <br>Perfect Fit</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html#home">Home</a>
+        <span>/</span>
+        <a href="?page=shop">Shop</a>
+        <span>/</span>
+        <span id="productDetailBreadcrumb">Product</span>
+      </nav>
+
+      <div class="product-detail-layout">
+        <div class="product-detail-gallery">
+          <div class="product-detail-image-wrap">
+            <img id="productDetailImage" src="./images/Products/_DSC8045-Edit.jpg" alt="Product">
           </div>
-          <h4 class="step-title">Churidar</h4>
-          <p class="step-desc">Elegant gatherings for traditional looks.</p>
+          <div class="product-thumb-row" id="productThumbRow">
+            <button class="product-thumb is-active" type="button"><img src="./images/Products/_DSC8045-Edit.jpg"
+                alt="Product thumbnail"></button>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="layers"></i>
+
+        <div class="product-detail-content">
+          <p class="product-detail-category" id="productDetailCategory">Legging</p>
+          <h2 class="product-detail-title" id="productDetailName">Product Name</h2>
+          <p class="product-detail-meta" id="productDetailMeta">Sizes XS - 3XL</p>
+          <div class="product-detail-price" id="productDetailPrice">INR 0</div>
+          <p class="product-tax-line">Inclusive of all taxes</p>
+
+          <div class="product-detail-block compact-block">
+            <h3>Select Size</h3>
+            <div class="product-size-list compact-size-list" id="productSizeList">
+              <button type="button">S</button>
+              <button type="button" class="is-active">M</button>
+              <button type="button">L</button>
+              <button type="button">XL</button>
+            </div>
           </div>
-          <h4 class="step-title">Jeggings</h4>
-          <p class="step-desc">Denim style with legging comfort.</p>
+
+          <div class="product-detail-block compact-block">
+            <h3>Select Color</h3>
+            <div class="product-color-list" id="productColorList">
+              <button type="button" class="product-color is-selected" style="--swatch:#394a58;"
+                aria-label="Slate Blue"></button>
+              <button type="button" class="product-color" style="--swatch:#7a253a;" aria-label="Wine"></button>
+              <button type="button" class="product-color" style="--swatch:#1f2f89;" aria-label="Royal Blue"></button>
+            </div>
+          </div>
+
+          <div class="product-detail-actions compact-actions">
+            <button id="productAddToCartBtn" type="button" class="btn">Add to Cart</button>
+          </div>
+
+          <div class="product-service-strip compact-service-strip">
+            <div class="product-service-item compact-service-item">
+              <i data-lucide="truck"></i>
+              <h4>Free Shipping</h4>
+            </div>
+            <div class="product-service-item compact-service-item">
+              <i data-lucide="badge-check"></i>
+              <h4>Quality Mark</h4>
+            </div>
+            <div class="product-service-item compact-service-item">
+              <i data-lucide="lock"></i>
+              <h4>Secure Pay</h4>
+            </div>
+            <div class="product-service-item compact-service-item">
+              <i data-lucide="rotate-ccw"></i>
+              <h4>Easy Return</h4>
+            </div>
+          </div>
+
+          <div class="product-tab-section">
+            <div class="product-tab-nav" role="tablist" aria-label="Product Information Tabs">
+              <button type="button" class="product-tab-btn is-active" data-tab-target="desc" role="tab"
+                aria-selected="true">Description</button>
+              <button type="button" class="product-tab-btn" data-tab-target="spec" role="tab"
+                aria-selected="false">Specifications</button>
+              <button type="button" class="product-tab-btn" data-tab-target="fabric" role="tab"
+                aria-selected="false">Fabrication</button>
+            </div>
+            <div class="product-tab-panels">
+              <div class="product-tab-panel is-active" data-tab-panel="desc">
+                <p id="productDetailTabDesc">You Leggings products are designed to move with your lifestyle. From daily
+                  errands to long work hours, our fabrics hold their shape and offer all-day comfort without compromise.
+                </p>
+              </div>
+              <div class="product-tab-panel" data-tab-panel="spec">
+                <ul id="productDetailTabSpec">
+                  <li>Material composition: Premium cotton-elastane blend</li>
+                  <li>Stretch: 4-way flexibility for active movement</li>
+                  <li>Waist type: Soft elastic waistband for support</li>
+                  <li>Ideal use: Everyday wear, workwear, and travel</li>
+                </ul>
+              </div>
+              <div class="product-tab-panel" data-tab-panel="fabric">
+                <ul id="productDetailTabFabric">
+                  <li>Fine-gauge knitting for a smooth premium finish</li>
+                  <li>Color-lock treatment for wash-after-wash durability</li>
+                  <li>Reinforced stitching at stress points for long life</li>
+                  <li>Breathable construction engineered for all-day wear</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-icon-box">
-            <i data-lucide="sun"></i>
+      </div>
+
+      <div class="related-products">
+        <div class="text-center">
+          <span class="section-subtitle">You May Also Like</span>
+          <h2 class="section-title">Related Products</h2>
+        </div>
+        <div class="products-grid related-products-grid" id="relatedProductsGrid"></div>
+      </div>
+    </div>
+  </section>
+  <!-- New Arrivals Page -->
+  <section class="section page-view new-arrivals-page" id="new-arrivals-page">
+    <div class="page-main arrivals-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8984-Photoroom.png'); background-size: auto 120%; background-position: right 100% top 50%; background-repeat: no-repeat; transform: scaleX(-1); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Latest Drop</span>
+        <h1 class="hero-title">New Arrivals <br>Just Landed</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="text-center">
+        <span class="section-subtitle">Season Edit</span>
+        <h2 class="section-title">Fresh Styles This Month</h2>
+      </div>
+      <div class="arrivals-layout">
+
+        <div class="products-grid arrivals-products-grid">
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8742-Edit.jpg" alt="Urban Motion"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Urban Motion</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 690</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
           </div>
-          <h4 class="step-title">Capri</h4>
-          <p class="step-desc">Casual comfort for sunny days.</p>
+
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8832.jpg" alt="Daily Sculpt"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Daily Sculpt</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 620</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8533-Edit.jpg" alt="Move Ease"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Move Ease</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 560</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8128-Edit.jpg" alt="Street Soft"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Street Soft</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 585</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8910.jpg" alt="Plum Drift"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Plum Drift</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 640</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card shop-product-card">
+            <div class="product-image"><img src="./images/Products/_DSC8752-Edit.jpg" alt="Rose Daywear"></div>
+            <div class="product-details shop-product-details">
+              <p class="shop-product-category">New Arrival</p>
+              <h3 class="product-name">Rose Daywear</h3>
+              <div class="shop-product-bottom">
+                <div class="product-price">INR 605</div>
+                <a href="#" class="shop-product-link">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Page -->
+  <section class="section page-view blog-page" id="blog-page">
+    <div class="page-main blog-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8285-Photoroom.png'); background-size: auto 120%; background-position: right 0% top 50%; background-repeat: no-repeat; transform: scaleX(); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Insights & Style</span>
+        <h1 class="hero-title">The You Leggings <br>Journal</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="blog-top-layout">
+        <article class="blog-highlight-card">
+          <div class="blog-highlight-image">
+            <img src="./images/Products/_DSC8716-Edit.jpg" alt="Featured Blog Post">
+          </div>
+          <div class="blog-highlight-content">
+            <h2>How to Build a Versatile Leggings Wardrobe for Every Day</h2>
+            <p>Create effortless looks for work, travel, and casual outings with a few high-quality essentials and smart
+              color pairings.</p>
+            <span class="blog-date">29-Jan-2026</span>
+          </div>
+        </article>
+
+        <aside class="blog-most-read">
+          <h3>Most Read</h3>
+          <ul>
+            <li>
+              <a href="#">How to Build a Versatile Leggings Wardrobe for Every Day</a>
+              <span>29-Jan-2026</span>
+            </li>
+            <li>
+              <a href="#">Why Every Modern Closet Needs Performance Bottom Wear</a>
+              <span>21-Jan-2026</span>
+            </li>
+            <li>
+              <a href="#">How Fabric Quality Improves Comfort and Long-Term Fit</a>
+              <span>25-Dec-2025</span>
+            </li>
+            <li>
+              <a href="#">Choosing the Right Legging Length for Every Occasion</a>
+              <span>23-Dec-2025</span>
+            </li>
+            <li>
+              <a href="#">Color Styling Guide: Matching Kurtis with Solid Leggings</a>
+              <span>23-Dec-2025</span>
+            </li>
+            <li>
+              <a href="#">Care Tips to Keep Stretch Fabrics Soft and Lasting Longer</a>
+              <span>18-Dec-2025</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="blog-articles-head">
+        <h2>View All Articles</h2>
+      </div>
+
+      <div class="blog-articles-grid">
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8716-Edit.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>29-Jan-2026</p>
+            <h3>How to Build a Versatile Leggings Wardrobe for Every Day</h3>
+          </div>
+        </article>
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8785-Edit.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>21-Jan-2026</p>
+            <h3>Why Every Modern Closet Needs Performance Bottom Wear</h3>
+          </div>
+        </article>
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8962.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>25-Dec-2025</p>
+            <h3>How Fabric Quality Improves Comfort and Long-Term Fit</h3>
+          </div>
+        </article>
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8910.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>23-Dec-2025</p>
+            <h3>Choosing the Right Legging Length for Every Occasion</h3>
+          </div>
+        </article>
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8922.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>23-Dec-2025</p>
+            <h3>Color Styling Guide: Matching Kurtis with Solid Leggings</h3>
+          </div>
+        </article>
+        <article class="blog-article-card">
+          <div class="blog-article-image"><img src="./images/Products/_DSC8810.jpg" alt="Blog article"></div>
+          <div class="blog-article-content">
+            <p class="blog-article-date"><i data-lucide="calendar-days"></i>18-Dec-2025</p>
+            <h3>Care Tips to Keep Stretch Fabrics Soft and Lasting Longer</h3>
+          </div>
+        </article>
+      </div>
+
+      <div class="blog-show-more-wrap">
+        <button class="btn blog-show-more-btn" type="button">Show More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Page -->
+  <section class="section page-view contact-page" id="contact-page">
+    <div class="page-main contact-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8937-Photoroom.png'); background-size: auto 130%; background-position: right 100% top 50%; background-repeat: no-repeat; transform: scaleX(-1); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Reach Us</span>
+        <h1 class="hero-title">Contact <br>You Leggings</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="contact-grid">
+        <div class="contact-panel">
+          <span class="section-subtitle">Get in Touch</span>
+          <h2 class="section-title">We're delighted to assist you</h2>
+          <p class="section-desc">We're delighted to assist you with any inquiries you may have about our exquisite
+            collections of clothing and accessories. Our commitment is to provide exceptional service and ensure your
+            experience with You Leggings is enjoyable. Please reach out to us if you have any questions or need
+            assistance. We look forward to hearing from you!</p>
+          <ul class="contact-list">
+            <li><strong>Support Hours:</strong> Monday to Saturday, 9:30 AM - 7:00 PM</li>
+            <li><strong>Response Time:</strong> We usually respond within 24 hours</li>
+            <li><strong>Order Help:</strong> Share your order number for faster support</li>
+            <li><strong>Bulk Enquiries:</strong> Retail and wholesale requests are welcome</li>
+          </ul>
+        </div>
+        <form class="contact-form">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" placeholder="Your full name">
+          <label for="contact-mobile">Mobile Number</label>
+          <input id="contact-mobile" type="tel" placeholder="+91 98765 43210">
+          <label for="contact-email">Email address</label>
+          <input id="contact-email" type="email" placeholder="you@example.com">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="5" placeholder="Write your message"></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-details-block">
+        <article class="contact-detail-card">
+          <div class="contact-detail-icon" aria-hidden="true">
+            <i data-lucide="mail"></i>
+          </div>
+          <h3>Email</h3>
+          <p>youleggings@gmail.com</p>
+        </article>
+        <article class="contact-detail-card">
+          <div class="contact-detail-icon" aria-hidden="true">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3>Address</h3>
+          <p>5/4, Surya Nagar, 2nd Street, Bridgeway Colony Extn, Tirupur - 641607</p>
+        </article>
+        <article class="contact-detail-card">
+          <div class="contact-detail-icon" aria-hidden="true">
+            <i data-lucide="phone"></i>
+          </div>
+          <h3>Phone</h3>
+          <p>+91 740143 24967</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Page -->
+  <section class="section page-view cart-page" id="cart-page">
+    <div class="page-main cart-main" style="background-image: none; background-color: #9f9f9f;">
+      <div class="hero-overlay"></div>
+      <div
+        style="position: absolute; inset: 0; background-image: url('./images/bg-less/_DSC8285-Photoroom.png'); background-size: auto 120%; background-position: right 0% top 50%; background-repeat: no-repeat; transform: scaleX(); z-index: 2;">
+      </div>
+      <div class="container page-main-content">
+        <span class="hero-subtitle">Your Bag</span>
+        <h1 class="hero-title">Shopping <br>Cart</h1>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="cart-layout">
+        <div class="cart-items">
+          <article class="cart-item">
+            <img src="./images/Products/_DSC9021-Edit.jpg" alt="Nude Comfort Ankle">
+            <div class="cart-item-info">
+              <h3>Nude Comfort Ankle</h3>
+              <p>Size: M</p>
+              <p>Color: Beige</p>
+            </div>
+            <div class="cart-item-qty">
+              <button type="button">-</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </div>
+            <div class="cart-item-price">INR 549</div>
+          </article>
+
+          <article class="cart-item">
+            <img src="./images/Products/_DSC8962.jpg" alt="Cobalt Core Legging">
+            <div class="cart-item-info">
+              <h3>Cobalt Core Legging</h3>
+              <p>Size: L</p>
+              <p>Color: Blue</p>
+            </div>
+            <div class="cart-item-qty">
+              <button type="button">-</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </div>
+            <div class="cart-item-price">INR 599</div>
+          </article>
+        </div>
+
+        <aside class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="cart-summary-row">
+            <span>Subtotal</span>
+            <strong id="cartSubtotalValue">INR 1,148</strong>
+          </div>
+          <div class="cart-summary-row">
+            <span>Shipping</span>
+            <strong id="cartShippingValue">INR 0</strong>
+          </div>
+          <div class="cart-summary-row total">
+            <span>Total</span>
+            <strong id="cartTotalValue">INR 1,148</strong>
+          </div>
+          <button class="btn cart-checkout-btn" type="button">Proceed to Checkout</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Page -->
+  <section class="section page-view login-page" id="login-page">
+    <div class="container page-body">
+      <div class="login-wrap">
+        <div class="login-card" id="authCard" data-auth-mode="login">
+          <a href="index.html#home" class="login-logo">
+            <img src="./images/logo.png" alt="You Leggings Logo">
+          </a>
+          <div class="auth-switch-top">
+            <button id="authLoginTab" class="auth-tab is-active" type="button">Login</button>
+            <button id="authSignupTab" class="auth-tab" type="button">Sign Up</button>
+          </div>
+
+          <h2 id="authTitle">Sign In</h2>
+
+          <form id="loginForm" class="login-form auth-panel is-active">
+            <label for="login-email">Email Address</label>
+            <input id="login-email" type="email" placeholder="you@example.com">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" placeholder="Enter your password">
+            <button class="btn" type="submit">Login</button>
+          </form>
+
+          <form id="signupForm" class="login-form auth-panel">
+            <label for="signup-name">Full Name</label>
+            <input id="signup-name" type="text" placeholder="Your full name">
+            <label for="signup-email">Email Address</label>
+            <input id="signup-email" type="email" placeholder="you@example.com">
+            <label for="signup-password">Create Password</label>
+            <input id="signup-password" type="password" placeholder="Create a strong password">
+            <button class="btn" type="submit">Sign Up</button>
+          </form>
+
+          <div class="login-help auth-bottom-action">
+            <span id="authBottomText">New user?</span>
+            <button id="authBottomBtn" class="auth-bottom-btn" type="button">Sign Up</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Products Section -->
-  <section class="section" id="shop">
+  <section class="section home-page-section" id="new-arrivals">
     <div class="container">
       <div class="text-center">
         <span class="section-subtitle">New Arrivals</span>
@@ -183,8 +1132,6 @@
           <div class="product-details">
             <h3 class="product-name">fghfghfghfgh</h3>
             <div class="product-price">₹ 945 <span class="product-old-price">₹ 950.00</span></div>
-            <!-- <button class="btn btn-outline" style="margin-top: 15px; padding: 8px 20px; font-size: 11px;">Add to
-              Cart</button> -->
           </div>
         </div>
 
@@ -196,8 +1143,6 @@
           <div class="product-details">
             <h3 class="product-name">Legging 17</h3>
             <div class="product-price">₹ 270 <span class="product-old-price">₹ 300.00</span></div>
-            <!-- <button class="btn btn-outline" style="margin-top: 15px; padding: 8px 20px; font-size: 11px;">Add to
-              Cart</button> -->
           </div>
         </div>
 
@@ -209,8 +1154,6 @@
           <div class="product-details">
             <h3 class="product-name">Demo Products</h3>
             <div class="product-price">₹ 475 <span class="product-old-price">₹ 500.00</span></div>
-            <!-- <button class="btn btn-outline" style="margin-top: 15px; padding: 8px 20px; font-size: 11px;">Add to
-              Cart</button> -->
           </div>
         </div>
 
@@ -222,20 +1165,18 @@
           <div class="product-details">
             <h3 class="product-name">Legging Premium 6</h3>
             <div class="product-price">₹ 440 <span class="product-old-price">₹ 450.00</span></div>
-            <!-- <button class="btn btn-outline" style="margin-top: 15px; padding: 8px 20px; font-size: 11px;">Add to
-              Cart</button> -->
           </div>
         </div>
       </div>
 
       <div class="text-center" style="margin-top: 60px;">
-        <a href="#" class="btn">View All Collections</a>
+        <a href="?page=new-arrivals" class="btn">View All Collections</a>
       </div>
     </div>
   </section>
 
   <!-- Split Banner / Highlight Section -->
-  <section class="section" style="padding: 0;">
+  <section class="section home-page-section" style="padding: 0;">
     <div class="split-banner">
       <div class="split-content">
         <span class="section-subtitle" style="margin-bottom: 15px;">Limited Edition</span>
@@ -245,7 +1186,7 @@
           with precision and designed to move with you effortlessly.
         </p>
         <div>
-          <a href="#" class="btn">Explore Shop</a>
+          <a href="?page=shop" class="btn">Explore Shop</a>
         </div>
       </div>
       <div class="split-image"></div>
@@ -253,7 +1194,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="section" style="background-color: #fff;">
+  <section class="section home-page-section" style="background-color: #fff;">
     <div class="container">
       <div class="text-center">
         <span class="section-subtitle">Testimonials</span>
@@ -286,7 +1227,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="#" class="logo">
+          <a href="index.html#home" class="logo">
             <img src="./images/logo.png" alt="You Leggings Logo">
           </a>
           <p style="line-height: 1.8; margin-bottom: 20px; color: #999;">
@@ -303,11 +1244,11 @@
         <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="?page=about">About Us</a></li>
+            <li><a href="?page=shop">Shop</a></li>
+            <li><a href="?page=new-arrivals">New Arrivals</a></li>
+            <li><a href="?page=contact">Contact Us</a></li>
           </ul>
         </div>
 
@@ -341,6 +1282,15 @@
   <script>
     lucide.createIcons();
 
+    const params = new URLSearchParams(window.location.search);
+    const activePage = params.get('page');
+    const routedPages = ['about', 'shop', 'product', 'new-arrivals', 'blog', 'contact', 'cart', 'login'];
+    const isRoutedPage = routedPages.includes(activePage);
+    if (isRoutedPage) {
+      document.body.classList.add(`${activePage}-page-active`);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
     // Header scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header');
@@ -350,6 +1300,943 @@
         header.classList.remove('scrolled');
       }
     });
+
+    const header = document.querySelector('.header');
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    const searchToggleBtn = document.getElementById('searchToggleBtn');
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+    const headerSearchBar = document.getElementById('headerSearchBar');
+    const headerSearchInput = headerSearchBar ? headerSearchBar.querySelector('input') : null;
+    const headerSearchResults = document.getElementById('headerSearchResults');
+    const cartPageBtn = document.getElementById('cartPageBtn');
+    const cartCountBadge = document.getElementById('cartCountBadge');
+    const loginPageBtn = document.getElementById('loginPageBtn');
+    const authCard = document.getElementById('authCard');
+    const authLoginTab = document.getElementById('authLoginTab');
+    const authSignupTab = document.getElementById('authSignupTab');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const authBottomText = document.getElementById('authBottomText');
+    const authBottomBtn = document.getElementById('authBottomBtn');
+    const authTitle = document.getElementById('authTitle');
+
+    if (searchToggleBtn && headerSearchBar) {
+      searchToggleBtn.addEventListener('click', () => {
+        headerSearchBar.classList.toggle('open');
+        headerSearchBar.setAttribute('aria-hidden', headerSearchBar.classList.contains('open') ? 'false' : 'true');
+        if (headerSearchBar.classList.contains('open') && headerSearchInput) {
+          headerSearchInput.focus();
+        }
+      });
+    }
+
+    if (searchCloseBtn && headerSearchBar) {
+      searchCloseBtn.addEventListener('click', () => {
+        headerSearchBar.classList.remove('open');
+        headerSearchBar.setAttribute('aria-hidden', 'true');
+        if (headerSearchResults) {
+          headerSearchResults.innerHTML = '';
+          headerSearchResults.classList.remove('has-items');
+        }
+      });
+    }
+
+    if (cartPageBtn) {
+      cartPageBtn.addEventListener('click', () => {
+        window.location.href = '?page=cart';
+      });
+    }
+
+    if (loginPageBtn) {
+      loginPageBtn.addEventListener('click', () => {
+        window.location.href = '?page=login';
+      });
+    }
+
+    function setAuthMode(mode) {
+      if (!authCard || !authLoginTab || !authSignupTab || !loginForm || !signupForm || !authBottomText || !authBottomBtn || !authTitle) {
+        return;
+      }
+
+      const isSignup = mode === 'signup';
+      authCard.setAttribute('data-auth-mode', isSignup ? 'signup' : 'login');
+      authLoginTab.classList.toggle('is-active', !isSignup);
+      authSignupTab.classList.toggle('is-active', isSignup);
+      loginForm.classList.toggle('is-active', !isSignup);
+      signupForm.classList.toggle('is-active', isSignup);
+      authTitle.textContent = isSignup ? 'Create Account' : 'Sign In';
+      authBottomText.textContent = isSignup ? 'Already have an account?' : 'New user?';
+      authBottomBtn.textContent = isSignup ? 'Login' : 'Sign Up';
+    }
+
+    if (authLoginTab) {
+      authLoginTab.addEventListener('click', () => setAuthMode('login'));
+    }
+
+    if (authSignupTab) {
+      authSignupTab.addEventListener('click', () => setAuthMode('signup'));
+    }
+
+    if (authBottomBtn) {
+      authBottomBtn.addEventListener('click', () => {
+        const currentMode = authCard && authCard.getAttribute('data-auth-mode') === 'signup' ? 'signup' : 'login';
+        setAuthMode(currentMode === 'signup' ? 'login' : 'signup');
+      });
+    }
+
+    function slugifyProductName(name) {
+      return name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    const productCards = document.querySelectorAll('#shop-page .shop-product-card, #new-arrivals-page .shop-product-card');
+    const productCatalog = {};
+
+    productCards.forEach((card) => {
+      const nameEl = card.querySelector('.product-name');
+      const categoryEl = card.querySelector('.shop-product-category');
+      const metaEl = card.querySelector('.shop-product-meta');
+      const priceEl = card.querySelector('.product-price');
+      const imgEl = card.querySelector('.product-image img');
+      const actionEl = card.querySelector('.shop-product-link');
+
+      if (!nameEl || !priceEl || !imgEl) return;
+
+      const name = nameEl.textContent.trim();
+      const slug = slugifyProductName(name);
+
+      if (!productCatalog[slug]) {
+        productCatalog[slug] = {
+          name,
+          category: categoryEl ? categoryEl.textContent.trim() : 'Legging',
+          meta: metaEl ? metaEl.textContent.trim() : 'Sizes XS - XL',
+          price: priceEl.textContent.trim(),
+          image: imgEl.getAttribute('src'),
+          alt: imgEl.getAttribute('alt') || name
+        };
+      }
+
+      card.setAttribute('data-product', slug);
+
+      if (actionEl) {
+        actionEl.setAttribute('href', `?page=product&product=${slug}`);
+        actionEl.textContent = 'Buy Now';
+      }
+
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('.shop-product-link')) return;
+        window.location.href = `?page=product&product=${slug}`;
+      });
+    });
+
+    function getSearchableProducts() {
+      return Object.entries(productCatalog).map(([slug, item]) => ({ slug, ...item }));
+    }
+
+    const SIZE_ORDER = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
+
+    // Edit this map to set custom thumbnail rows per product.
+    // Key = product slug, Value = array of image paths in the order you want.
+    // Example:
+    // 'nude-comfort-ankle': ['./images/Products/_DSC8045-Edit.jpg', './images/Products/_DSC8962.jpg']
+    const productThumbConfig = {
+      'nude-comfort-ankle': [
+        './images/Products/_DSC8045-Edit.jpg',
+        './images/Products/_DSC8028-Edit.jpg',
+        './images/Products/_DSC8016-Edit.jpg'
+      ],
+      'cobalt-core-legging': [
+        './images/Products/_DSC8962.jpg',
+        './images/Products/_DSC8954.jpg'
+      ],
+      'aqua-flex-active': [
+        './images/Products/_DSC9026-Edit.jpg',
+        './images/Products/_DSC9021-Edit.jpg',
+        './images/Products/_DSC9004-Edit.jpg'
+      ],
+      'neon-move-set': [
+        './images/Products/_DSC7885-Edit.jpg',
+        './images/Products/_DSC7874-Edit.jpg',
+        './images/Products/_DSC7889-Edit.jpg'
+      ],
+      'scarlet-sport-fit': [
+        './images/Products/_DSC7786-Edit.jpg',
+        './images/Products/_DSC7788-Edit.jpg',
+        './images/Products/_DSC7812-Edit.jpg'
+      ],
+      'floral-blush-pair': [
+        './images/Products/_DSC8785-Edit.jpg',
+        './images/Products/_DSC8789-Edit.jpg',
+        './images/Products/_DSC8797-Edit.jpg'
+      ],
+      'olive-essential-set': [
+        './images/Products/_DSC7839-Edit.jpg',
+        './images/Products/_DSC7829-Edit.jpg',
+        './images/Products/_DSC7865-Edit.jpg'
+      ],
+      'mint-aura-kurti-legging': [
+        './images/Products/_DSC8871-Edit.jpg',
+        './images/Products/_DSC8878-Edit.jpg',
+        './images/Products/_DSC8893-Edit.jpg'
+      ],
+      'indigo-flare-bottom': [
+        './images/Products/_DSC8659-Edit.jpg',
+        './images/Products/_DSC8682-Edit.jpg',
+        './images/Products/_DSC8637-Edit.jpg'
+      ],
+      'teal-grace-kurti-fit': [
+        './images/Products/_DSC7901-Edit.jpg',
+        './images/Products/_DSC7911-Edit.jpg',
+        './images/Products/_DSC7925-Edit.jpg'
+      ],
+      'emerald-dot-kurta-set': [
+        './images/Products/_DSC7937-Edit.jpg',
+        './images/Products/_DSC7951-Edit.jpg',
+        './images/Products/_DSC7961-Edit.jpg'
+      ],
+      'citrus-classic-set': [
+        './images/Products/_DSC8742-Edit.jpg',
+        './images/Products/_DSC8735-Edit.jpg',
+        './images/Products/_DSC8752-Edit.jpg'
+      ],
+      'orchid-everyday-kurti': [
+        './images/Products/_DSC8065-Edit.jpg',
+        './images/Products/_DSC8069-Edit.jpg',
+        './images/Products/_DSC8085-Edit.jpg'
+      ],
+      'plum-luxe-co-ord': [
+        './images/Products/_DSC8116-Edit.jpg',
+        './images/Products/_DSC8123.jpg',
+        './images/Products/_DSC8128-Edit.jpg'
+      ],
+      'mustard-gleam-kurti': [
+        './images/Products/_DSC8922.jpg',
+        './images/Products/_DSC8910.jpg'
+      ],
+      'ruby-festive-set': [
+        './images/Products/_DSC8810.jpg',
+        './images/Products/_DSC8819.jpg',
+        './images/Products/_DSC8832.jpg'
+      ],
+      'crimson-asym-tunic': [
+        './images/Products/_DSC8352-Edit.jpg',
+        './images/Products/_DSC8379-Edit.jpg',
+        './images/Products/_DSC8407-Edit.jpg'
+      ],
+      'ivory-print-lounge': [
+        './images/Products/_DSC8489-Edit.jpg',
+        './images/Products/_DSC8496-Edit.jpg',
+        './images/Products/_DSC8468-Edit.jpg'
+      ],
+      'sunrise-everyday-fit': [
+        './images/Products/_DSC8432-Edit.jpg',
+        './images/Products/_DSC8437-Edit.jpg',
+        './images/Products/_DSC8462-Edit.jpg'
+      ],
+      'coral-motion-pair': [
+        './images/Products/_DSC8510-Edit.jpg',
+        './images/Products/_DSC8515-Edit.jpg',
+        './images/Products/_DSC8523-Edit.jpg'
+      ],
+      'active-blue-flex': [
+        './images/Products/_DSC8533-Edit.jpg',
+        './images/Products/_DSC8541-Edit.jpg',
+        './images/Products/_DSC8545-Edit.jpg'
+      ],
+      'cherry-street-edit': [
+        './images/Products/_DSC8587-Edit.jpg',
+        './images/Products/_DSC8591-Edit.jpg',
+        './images/Products/_DSC8597-Edit.jpg'
+      ],
+      'azure-comfort-line': [
+        './images/Products/_DSC8716-Edit.jpg',
+        './images/Products/_DSC8719-Edit.jpg',
+        './images/Products/_DSC8723-Edit.jpg'
+      ],
+      'classic-move-essential': [
+        './images/Products/_DSC8189.jpg',
+        './images/Products/_DSC8204.jpg'
+      ]
+    };
+
+    function deriveSizeOptions(metaText) {
+      const normalized = String(metaText || '').toUpperCase();
+      const match = normalized.match(/(XS|S|M|L|XL|2XL|3XL|4XL|5XL)\s*-\s*(XS|S|M|L|XL|2XL|3XL|4XL|5XL)/);
+      if (match) {
+        const start = SIZE_ORDER.indexOf(match[1]);
+        const end = SIZE_ORDER.indexOf(match[2]);
+        if (start !== -1 && end !== -1) {
+          const min = Math.min(start, end);
+          const max = Math.max(start, end);
+          return SIZE_ORDER.slice(min, max + 1);
+        }
+      }
+      const found = SIZE_ORDER.filter((s) => normalized.includes(s));
+      return found.length ? found : ['S', 'M', 'L', 'XL'];
+    }
+
+    function hashText(value) {
+      return Array.from(String(value || '')).reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+    }
+
+    const colorSets = [
+      [{ label: 'Nude Beige', swatch: '#d9c1aa' }, { label: 'Soft Cocoa', swatch: '#8f6a56' }, { label: 'Black', swatch: '#2c2c2c' }],
+      [{ label: 'Cobalt Blue', swatch: '#1f3faa' }, { label: 'Ink Navy', swatch: '#273b57' }, { label: 'Cloud Grey', swatch: '#b7bec7' }],
+      [{ label: 'Ruby Red', swatch: '#b52539' }, { label: 'Berry Pink', swatch: '#c43a68' }, { label: 'Charcoal', swatch: '#3b3f44' }],
+      [{ label: 'Olive Green', swatch: '#566742' }, { label: 'Mustard', swatch: '#bf9f2e' }, { label: 'Ivory', swatch: '#ece5d8' }]
+    ];
+
+    function buildProductProfile(product, allProducts) {
+      const seed = hashText(product.slug);
+      const sizes = deriveSizeOptions(product.meta);
+      const customThumbs = Array.isArray(productThumbConfig[product.slug])
+        ? productThumbConfig[product.slug].filter((src) => typeof src === 'string' && src.trim())
+        : [];
+
+      let gallery = [];
+      if (customThumbs.length) {
+        gallery = [...new Set(customThumbs)];
+      } else {
+        const galleryPool = allProducts.filter((item) => item.slug !== product.slug).map((item) => item.image);
+        gallery = [product.image];
+        for (let i = 0; i < 3 && galleryPool.length; i += 1) {
+          const index = (seed + i * 3) % galleryPool.length;
+          gallery.push(galleryPool[index]);
+        }
+      }
+
+      const comfortWords = ['second-skin comfort', 'structured stretch', 'day-long softness', 'breathable support'];
+      const fitWords = ['streamlined silhouette', 'comfortable hold', 'clean everyday fit', 'flexible movement fit'];
+      const useWords = ['daily routines', 'office wear', 'travel days', 'weekend styling'];
+
+      const comfort = comfortWords[seed % comfortWords.length];
+      const fit = fitWords[(seed + 1) % fitWords.length];
+      const useCase = useWords[(seed + 2) % useWords.length];
+      const colors = colorSets[seed % colorSets.length];
+
+      return {
+        description: `${product.name} is designed for ${comfort} with a ${fit}. It is built to keep shape and comfort through ${useCase}.`,
+        specifications: [
+          `Category: ${product.category}`,
+          `Fit profile: ${fit.charAt(0).toUpperCase()}${fit.slice(1)}`,
+          `Available sizes: ${sizes.join(', ')}`,
+          `MRP: ${product.price}`
+        ],
+        fabrication: [
+          'Premium cotton-elastane blend with smooth finish',
+          '4-way stretch knit for flexible movement',
+          'Color retention treatment for long-lasting shade',
+          'Reinforced stitching for repeated-wear durability'
+        ],
+        sizes,
+        colors,
+        gallery
+      };
+    }
+
+    function clearHeaderSearchResults() {
+      if (!headerSearchResults) return;
+      headerSearchResults.innerHTML = '';
+      headerSearchResults.classList.remove('has-items');
+    }
+
+    function renderHeaderSearchResults(query) {
+      if (!headerSearchResults) return;
+      const q = String(query || '').trim().toLowerCase();
+      if (!q) {
+        clearHeaderSearchResults();
+        return;
+      }
+
+      const matches = getSearchableProducts()
+        .filter((item) => `${item.name} ${item.category} ${item.meta}`.toLowerCase().includes(q))
+        .slice(0, 6);
+
+      if (!matches.length) {
+        clearHeaderSearchResults();
+        return;
+      }
+
+      headerSearchResults.innerHTML = matches
+        .map((item) => `
+          <button class="header-search-item" type="button" data-product="${item.slug}">
+            <img src="${item.image}" alt="${item.alt}">
+            <span class="header-search-item-name">${item.name}</span>
+            <span class="header-search-item-price">${item.price}</span>
+          </button>
+        `)
+        .join('');
+
+      headerSearchResults.classList.add('has-items');
+    }
+
+    if (headerSearchResults) {
+      headerSearchResults.addEventListener('click', (event) => {
+        const item = event.target.closest('.header-search-item');
+        if (!item) return;
+        const slug = item.getAttribute('data-product');
+        if (slug) {
+          window.location.href = `?page=product&product=${slug}`;
+        }
+      });
+    }
+
+    const productDetailImage = document.getElementById('productDetailImage');
+    const productDetailCategory = document.getElementById('productDetailCategory');
+    const productDetailName = document.getElementById('productDetailName');
+    const productDetailMeta = document.getElementById('productDetailMeta');
+    const productDetailPrice = document.getElementById('productDetailPrice');
+    const productDetailBreadcrumb = document.getElementById('productDetailBreadcrumb');
+    const productDetailTabDesc = document.getElementById('productDetailTabDesc');
+    const productDetailTabSpec = document.getElementById('productDetailTabSpec');
+    const productDetailTabFabric = document.getElementById('productDetailTabFabric');
+    const productThumbRow = document.getElementById('productThumbRow');
+    const productSizeList = document.getElementById('productSizeList');
+    const productColorList = document.getElementById('productColorList');
+    const relatedProductsGrid = document.getElementById('relatedProductsGrid');
+    const productAddToCartBtn = document.getElementById('productAddToCartBtn');
+    const CART_STORAGE_KEY = 'youLeggingsCart';
+
+    if (activePage === 'product' && productDetailImage && productDetailName) {
+      const requestedProduct = params.get('product');
+      const searchableProducts = getSearchableProducts();
+      const productBySlug = searchableProducts.reduce((acc, item) => {
+        acc[item.slug] = item;
+        return acc;
+      }, {});
+      const fallbackProduct = searchableProducts.length ? searchableProducts[0] : null;
+      const selectedProduct = (requestedProduct && productBySlug[requestedProduct]) ? productBySlug[requestedProduct] : fallbackProduct;
+      const selectedSlug = selectedProduct ? selectedProduct.slug : '';
+
+      if (selectedProduct) {
+        const productProfile = buildProductProfile(selectedProduct, searchableProducts);
+
+        productDetailImage.setAttribute('src', productProfile.gallery[0]);
+        productDetailImage.setAttribute('alt', selectedProduct.alt);
+        productDetailCategory.textContent = selectedProduct.category;
+        productDetailName.textContent = selectedProduct.name;
+        productDetailMeta.textContent = selectedProduct.meta;
+        productDetailPrice.textContent = selectedProduct.price;
+        if (productDetailBreadcrumb) {
+          productDetailBreadcrumb.textContent = selectedProduct.name;
+        }
+        if (productDetailTabDesc) {
+          productDetailTabDesc.textContent = productProfile.description;
+        }
+        if (productDetailTabSpec) {
+          productDetailTabSpec.innerHTML = productProfile.specifications.map((item) => `<li>${item}</li>`).join('');
+        }
+        if (productDetailTabFabric) {
+          productDetailTabFabric.innerHTML = productProfile.fabrication.map((item) => `<li>${item}</li>`).join('');
+        }
+        if (productSizeList) {
+          productSizeList.innerHTML = productProfile.sizes
+            .map((size, index) => `<button type="button" class="${index === 0 ? 'is-active' : ''}">${size}</button>`)
+            .join('');
+        }
+        if (productColorList) {
+          productColorList.innerHTML = productProfile.colors
+            .map((color, index) => `<button type="button" class="product-color ${index === 0 ? 'is-selected' : ''}" style="--swatch:${color.swatch};" aria-label="${color.label}"></button>`)
+            .join('');
+        }
+        if (productThumbRow) {
+          productThumbRow.innerHTML = productProfile.gallery
+            .map((image, index) => `<button class="product-thumb ${index === 0 ? 'is-active' : ''}" type="button"><img src="${image}" alt="${selectedProduct.name} thumbnail ${index + 1}"></button>`)
+            .join('');
+        }
+        if (relatedProductsGrid) {
+          const sameCategory = searchableProducts.filter((item) => item.slug !== selectedSlug && item.category === selectedProduct.category);
+          const fallbackRelated = searchableProducts.filter((item) => item.slug !== selectedSlug);
+          const relatedItems = (sameCategory.length ? sameCategory : fallbackRelated).slice(0, 4);
+          relatedProductsGrid.innerHTML = relatedItems.map((item) => `
+            <div class="product-card shop-product-card" data-product="${item.slug}">
+              <div class="product-image"><img src="${item.image}" alt="${item.alt || item.name}"></div>
+              <div class="product-details shop-product-details">
+                <p class="shop-product-category">${item.category}</p>
+                <h3 class="product-name">${item.name}</h3>
+                <div class="shop-product-bottom">
+                  <div class="product-price">${item.price}</div>
+                  <a href="?page=product&product=${item.slug}" class="shop-product-link">View</a>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+        if (productAddToCartBtn) {
+          productAddToCartBtn.setAttribute('data-product', selectedSlug);
+        }
+      }
+    }
+
+    function getStoredCart() {
+      try {
+        const raw = localStorage.getItem(CART_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? normalizeCartItems(parsed) : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function normalizeCartItems(items) {
+      const normalized = [];
+      const itemMap = new Map();
+      (Array.isArray(items) ? items : []).forEach((item) => {
+        const slug = String(item?.slug || '').trim();
+        const size = String(item?.size || '').trim().toUpperCase();
+        const color = String(item?.color || '').trim().toLowerCase();
+        const qty = Math.max(1, Number(item?.qty) || 1);
+        const key = `${slug}|${size}|${color}`;
+
+        if (itemMap.has(key)) {
+          const existing = itemMap.get(key);
+          existing.qty += qty;
+          return;
+        }
+
+        const safeItem = {
+          slug,
+          name: item?.name || '',
+          image: item?.image || '',
+          price: Number(item?.price) || 0,
+          size: size || 'M',
+          color: item?.color || 'Standard',
+          qty
+        };
+        itemMap.set(key, safeItem);
+        normalized.push(safeItem);
+      });
+      return normalized;
+    }
+
+    function updateCartBadge() {
+      if (!cartCountBadge) return;
+      const totalItems = getStoredCart().reduce((sum, item) => sum + (Number(item.qty) || 0), 0);
+      cartCountBadge.textContent = String(totalItems);
+      cartCountBadge.classList.toggle('has-items', totalItems > 0);
+    }
+
+    function setStoredCart(items) {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(normalizeCartItems(items)));
+      } catch (error) {
+        // Ignore storage failures gracefully.
+      }
+      updateCartBadge();
+    }
+
+    function parseMoney(value) {
+      const amount = String(value || '').replace(/[^0-9]/g, '');
+      return amount ? parseInt(amount, 10) : 0;
+    }
+
+    function formatMoney(value) {
+      return `INR ${Number(value || 0).toLocaleString('en-IN')}`;
+    }
+
+    if (productSizeList) {
+      productSizeList.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button) return;
+        productSizeList.querySelectorAll('button').forEach((item) => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+      });
+    }
+
+    if (productColorList) {
+      productColorList.addEventListener('click', (event) => {
+        const button = event.target.closest('.product-color');
+        if (!button) return;
+        productColorList.querySelectorAll('.product-color').forEach((item) => item.classList.remove('is-selected'));
+        button.classList.add('is-selected');
+      });
+    }
+
+    if (productAddToCartBtn) {
+      productAddToCartBtn.addEventListener('click', () => {
+        const slug = productAddToCartBtn.getAttribute('data-product') || '';
+        const selectedProduct = productCatalog[slug];
+        if (!selectedProduct) return;
+
+        const selectedSize = document.querySelector('.compact-size-list button.is-active')?.textContent.trim() || 'M';
+        const selectedColor = document.querySelector('.product-color.is-selected')?.getAttribute('aria-label') || 'Standard';
+        const unitPrice = parseMoney(selectedProduct.price);
+
+        const cartItems = getStoredCart();
+        const existingIndex = cartItems.findIndex((item) => item.slug === slug && item.size === selectedSize && item.color === selectedColor);
+
+        if (existingIndex >= 0) {
+          cartItems[existingIndex].qty += 1;
+        } else {
+          cartItems.push({
+            slug,
+            name: selectedProduct.name,
+            image: selectedProduct.image,
+            price: unitPrice,
+            size: selectedSize,
+            color: selectedColor,
+            qty: 1
+          });
+        }
+
+        setStoredCart(cartItems);
+        const defaultText = 'Add to Cart';
+        productAddToCartBtn.textContent = 'Added to Cart';
+        productAddToCartBtn.disabled = true;
+        window.setTimeout(() => {
+          productAddToCartBtn.textContent = defaultText;
+          productAddToCartBtn.disabled = false;
+        }, 1000);
+      });
+    }
+
+    const shopGrid = document.querySelector('#shop-page .shop-products .products-grid');
+    const shopCards = shopGrid ? Array.from(shopGrid.querySelectorAll('.shop-product-card')) : [];
+    const shopFilters = document.querySelector('#shop-page .shop-filters');
+    const priceRangeLabel = shopFilters ? shopFilters.querySelector('.filter-range') : null;
+    const priceSlider = shopFilters ? shopFilters.querySelector('input[type="range"]') : null;
+    let currentShopSearch = (params.get('search') || '').trim().toLowerCase();
+    let applyShopFiltersRef = null;
+
+    function parsePrice(value) {
+      const num = String(value || '').replace(/[^0-9]/g, '');
+      return num ? parseInt(num, 10) : 0;
+    }
+
+    function extractSizes(metaText) {
+      const sizeOrder = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
+      const normalized = String(metaText || '').toUpperCase();
+      const match = normalized.match(/(XS|S|M|L|XL|2XL|3XL|4XL|5XL)\s*-\s*(XS|S|M|L|XL|2XL|3XL|4XL|5XL)/);
+      if (match) {
+        const start = sizeOrder.indexOf(match[1]);
+        const end = sizeOrder.indexOf(match[2]);
+        if (start !== -1 && end !== -1) {
+          const min = Math.min(start, end);
+          const max = Math.max(start, end);
+          return sizeOrder.slice(min, max + 1);
+        }
+      }
+      return sizeOrder.filter((s) => normalized.includes(s));
+    }
+
+    function setupShopFilters() {
+      if (!shopGrid || !shopFilters || !shopCards.length) return;
+
+      const categoryInputs = Array.from(shopFilters.querySelectorAll('.filter-group:nth-child(2) input[type="checkbox"]'));
+      const sizeInputs = Array.from(shopFilters.querySelectorAll('.filter-size input[type="checkbox"]'));
+      const availabilityInputs = Array.from(shopFilters.querySelectorAll('.filter-group:nth-child(4) input[type="checkbox"]'));
+      const sortInputs = Array.from(shopFilters.querySelectorAll('input[name="sort"]'));
+      const clearFiltersBtn = document.getElementById('clearShopFiltersBtn');
+      const categoryLabels = categoryInputs.map((input) => input.closest('label')?.textContent.trim()).filter(Boolean);
+      const defaultCategory = categoryLabels[0] || 'YOU FULL LENGTH LEGGINGS';
+
+      const productFilterMeta = {
+        'nude-comfort-ankle': { category: 'YOU ANKLE LENGTH LEGGINGS', availability: 'in', discount: 18, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'cobalt-core-legging': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 14, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'aqua-flex-active': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'out', discount: 10, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'] },
+        'neon-move-set': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 11, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'scarlet-sport-fit': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 16, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'floral-blush-pair': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 9, sizes: ['M', 'L', 'XL', '2XL', '3XL'] },
+        'olive-essential-set': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 13, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'] },
+        'mint-aura-kurti-legging': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'in', discount: 15, sizes: ['S', 'M', 'L', 'XL', '2XL'] },
+        'indigo-flare-bottom': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'out', discount: 8, sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'teal-grace-kurti-fit': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'in', discount: 12, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'emerald-dot-kurta-set': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'in', discount: 7, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'citrus-classic-set': { category: 'YOU KIDS LEGGINGS', availability: 'in', discount: 20, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'] },
+        'orchid-everyday-kurti': { category: 'YOU KIDS LEGGINGS', availability: 'out', discount: 17, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'] },
+        'plum-luxe-co-ord': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'in', discount: 6, sizes: ['M', 'L', 'XL', '2XL', '3XL'] },
+        'mustard-gleam-kurti': { category: 'YOU ANKLE LENGTH LEGGINGS', availability: 'in', discount: 19, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'ruby-festive-set': { category: 'YOU ANKLE LENGTH LEGGINGS', availability: 'in', discount: 10, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'crimson-asym-tunic': { category: 'YOU ANKLE LENGTH LEGGINGS', availability: 'in', discount: 12, sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'] },
+        'ivory-print-lounge': { category: 'YOU KIDS LEGGINGS', availability: 'in', discount: 21, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'sunrise-everyday-fit': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 14, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'] },
+        'coral-motion-pair': { category: 'YOU ANKLE LENGTH LEGGINGS', availability: 'in', discount: 12, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'active-blue-flex': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 11, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'] },
+        'cherry-street-edit': { category: 'MERLYN FULL LENGTH LEGGINGS', availability: 'out', discount: 9, sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'azure-comfort-line': { category: 'YOU FULL LENGTH LEGGINGS', availability: 'in', discount: 13, sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'] },
+        'classic-move-essential': { category: 'YOU KIDS LEGGINGS', availability: 'in', discount: 16, sizes: ['XS', 'S', 'M', 'L', 'XL'] }
+      };
+
+      shopCards.forEach((card, index) => {
+        const slug = card.dataset.product || '';
+        const nameText = card.querySelector('.product-name')?.textContent || '';
+        const categoryText = card.querySelector('.shop-product-category')?.textContent || '';
+        const priceText = card.querySelector('.product-price')?.textContent || '';
+        const metaText = card.querySelector('.shop-product-meta')?.textContent || '';
+        const mappedMeta = productFilterMeta[slug] || {};
+        const mappedCategory = mappedMeta.category || defaultCategory;
+        const stockState = mappedMeta.availability || 'in';
+        const mappedDiscount = typeof mappedMeta.discount === 'number' ? mappedMeta.discount : Math.max(5, Math.round((900 - parsePrice(priceText)) / 15));
+
+        card.dataset.filterPrice = String(parsePrice(priceText));
+        card.dataset.filterCategory = mappedCategory;
+        const mappedSizes = Array.isArray(mappedMeta.sizes) && mappedMeta.sizes.length
+          ? mappedMeta.sizes
+          : extractSizes(metaText);
+        card.dataset.filterSizes = mappedSizes.join(',');
+        card.dataset.filterStock = stockState;
+        card.dataset.filterDiscount = String(mappedDiscount);
+        card.dataset.filterSearch = `${nameText} ${categoryText} ${metaText}`.toLowerCase();
+      });
+
+      function getCheckedLabels(inputs) {
+        return inputs
+          .filter((input) => input.checked)
+          .map((input) => input.closest('label')?.textContent.trim())
+          .filter(Boolean);
+      }
+
+      function applyShopFilters() {
+        const maxPrice = priceSlider ? parseInt(priceSlider.value, 10) : 2500;
+        const selectedCategories = getCheckedLabels(categoryInputs);
+        const selectedSizes = getCheckedLabels(sizeInputs);
+        const selectedAvailability = getCheckedLabels(availabilityInputs);
+        const selectedSort = sortInputs.find((input) => input.checked)?.closest('label')?.textContent.trim().toLowerCase() || '';
+
+        if (priceRangeLabel) {
+          priceRangeLabel.textContent = `₹0 — ₹${maxPrice.toLocaleString('en-IN')}`;
+        }
+
+        const visibleCards = [];
+
+        shopCards.forEach((card) => {
+          const cardPrice = parseInt(card.dataset.filterPrice || '0', 10);
+          const cardCategory = card.dataset.filterCategory || '';
+          const cardSizes = (card.dataset.filterSizes || '').split(',').filter(Boolean);
+          const cardStock = card.dataset.filterStock || 'in';
+          const cardSearch = card.dataset.filterSearch || '';
+
+          const matchPrice = cardPrice <= maxPrice;
+          const matchCategory = !selectedCategories.length || selectedCategories.includes(cardCategory);
+          const matchSize = !selectedSizes.length || selectedSizes.some((size) => cardSizes.includes(size.toUpperCase()));
+          const matchSearch = !currentShopSearch || cardSearch.includes(currentShopSearch);
+
+          let matchAvailability = true;
+          if (selectedAvailability.length) {
+            matchAvailability =
+              (selectedAvailability.includes('In Stock') && cardStock === 'in') ||
+              (selectedAvailability.includes('Out of Stock') && cardStock === 'out');
+          }
+
+          const isVisible = matchPrice && matchCategory && matchSize && matchAvailability && matchSearch;
+          card.style.display = isVisible ? '' : 'none';
+          if (isVisible) visibleCards.push(card);
+        });
+
+        if (selectedSort) {
+          visibleCards.sort((a, b) => {
+            if (selectedSort.includes('price')) {
+              return parseInt(a.dataset.filterPrice || '0', 10) - parseInt(b.dataset.filterPrice || '0', 10);
+            }
+            if (selectedSort.includes('discount')) {
+              return parseInt(b.dataset.filterDiscount || '0', 10) - parseInt(a.dataset.filterDiscount || '0', 10);
+            }
+            return 0;
+          });
+          visibleCards.forEach((card) => shopGrid.appendChild(card));
+        }
+      }
+
+      const allInputs = [...categoryInputs, ...sizeInputs, ...availabilityInputs, ...sortInputs];
+      allInputs.forEach((input) => input.addEventListener('change', applyShopFilters));
+      if (priceSlider) priceSlider.addEventListener('input', applyShopFilters);
+      applyShopFiltersRef = applyShopFilters;
+
+      if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', () => {
+          categoryInputs.forEach((input) => { input.checked = false; });
+          sizeInputs.forEach((input) => { input.checked = false; });
+          availabilityInputs.forEach((input) => { input.checked = false; });
+          sortInputs.forEach((input) => { input.checked = false; });
+          if (priceSlider) priceSlider.value = priceSlider.max || '2500';
+          currentShopSearch = '';
+          if (headerSearchInput) {
+            headerSearchInput.value = '';
+          }
+          clearHeaderSearchResults();
+          applyShopFilters();
+          window.history.replaceState({}, '', '?page=shop');
+        });
+      }
+
+      applyShopFilters();
+    }
+
+    setupShopFilters();
+
+    function executeHeaderSearch() {
+      if (!headerSearchInput) return;
+      const rawQuery = headerSearchInput.value.trim();
+      if (activePage !== 'shop') {
+        const target = rawQuery ? `?page=shop&search=${encodeURIComponent(rawQuery)}` : '?page=shop';
+        window.location.href = target;
+        return;
+      }
+
+      currentShopSearch = rawQuery.toLowerCase();
+      if (applyShopFiltersRef) {
+        applyShopFiltersRef();
+      }
+
+      const nextUrl = rawQuery ? `?page=shop&search=${encodeURIComponent(rawQuery)}` : '?page=shop';
+      window.history.replaceState({}, '', nextUrl);
+    }
+
+    if (headerSearchInput) {
+      headerSearchInput.value = params.get('search') || '';
+      headerSearchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          executeHeaderSearch();
+        }
+      });
+      headerSearchInput.addEventListener('input', () => {
+        renderHeaderSearchResults(headerSearchInput.value);
+        if (activePage === 'shop') {
+          currentShopSearch = headerSearchInput.value.trim().toLowerCase();
+          if (applyShopFiltersRef) {
+            applyShopFiltersRef();
+          }
+        }
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!headerSearchBar) return;
+      if (!headerSearchBar.contains(event.target) && !searchToggleBtn?.contains(event.target)) {
+        clearHeaderSearchResults();
+      }
+    });
+
+    const productTabs = document.querySelectorAll('.product-tab-btn');
+    const productPanels = document.querySelectorAll('.product-tab-panel');
+
+    productTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab-target');
+        productTabs.forEach((item) => {
+          item.classList.remove('is-active');
+          item.setAttribute('aria-selected', 'false');
+        });
+        productPanels.forEach((panel) => panel.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        const activePanel = document.querySelector(`.product-tab-panel[data-tab-panel="${target}"]`);
+        if (activePanel) activePanel.classList.add('is-active');
+      });
+    });
+
+    if (productThumbRow) {
+      productThumbRow.addEventListener('click', (event) => {
+        const thumb = event.target.closest('.product-thumb');
+        if (!thumb) return;
+        const image = thumb.querySelector('img');
+        if (!image || !productDetailImage) return;
+        productDetailImage.setAttribute('src', image.getAttribute('src'));
+        productDetailImage.setAttribute('alt', image.getAttribute('alt') || 'Product');
+        productThumbRow.querySelectorAll('.product-thumb').forEach((item) => item.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      });
+    }
+
+    if (relatedProductsGrid) {
+      relatedProductsGrid.addEventListener('click', (event) => {
+        const link = event.target.closest('.shop-product-link');
+        if (link) return;
+        const card = event.target.closest('.shop-product-card');
+        if (!card) return;
+        const slug = card.getAttribute('data-product');
+        if (slug) {
+          window.location.href = `?page=product&product=${slug}`;
+        }
+      });
+    }
+
+    const cartItemsWrap = document.querySelector('#cart-page .cart-items');
+    const cartSubtotalValue = document.getElementById('cartSubtotalValue');
+    const cartShippingValue = document.getElementById('cartShippingValue');
+    const cartTotalValue = document.getElementById('cartTotalValue');
+
+    function renderCartPage() {
+      if (!cartItemsWrap) return;
+      const cartItems = getStoredCart();
+
+      if (!cartItems.length) {
+        cartItemsWrap.innerHTML = '<p class="cart-empty-state">Your cart is empty. Add products from the shop page.</p>';
+        if (cartSubtotalValue) cartSubtotalValue.textContent = formatMoney(0);
+        if (cartShippingValue) cartShippingValue.textContent = formatMoney(0);
+        if (cartTotalValue) cartTotalValue.textContent = formatMoney(0);
+        return;
+      }
+
+      cartItemsWrap.innerHTML = cartItems.map((item, index) => `
+        <article class="cart-item" data-cart-index="${index}">
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-info">
+            <button type="button" class="cart-item-remove" data-cart-action="remove" aria-label="Remove item">x</button>
+            <h3>${item.name}</h3>
+            <p>Size: ${item.size}</p>
+            <p>Color: ${item.color}</p>
+          </div>
+          <div class="cart-item-qty">
+            <button type="button" data-cart-action="decrease">-</button>
+            <span>${item.qty}</span>
+            <button type="button" data-cart-action="increase">+</button>
+          </div>
+          <div class="cart-item-price">${formatMoney(item.price * item.qty)}</div>
+        </article>
+      `).join('');
+
+      const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const shipping = subtotal > 999 ? 0 : (subtotal > 0 ? 49 : 0);
+      const total = subtotal + shipping;
+
+      if (cartSubtotalValue) cartSubtotalValue.textContent = formatMoney(subtotal);
+      if (cartShippingValue) cartShippingValue.textContent = formatMoney(shipping);
+      if (cartTotalValue) cartTotalValue.textContent = formatMoney(total);
+    }
+
+    if (cartItemsWrap) {
+      cartItemsWrap.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-cart-action]');
+        const itemNode = event.target.closest('.cart-item');
+        if (!button || !itemNode) return;
+
+        const index = parseInt(itemNode.getAttribute('data-cart-index') || '-1', 10);
+        if (index < 0) return;
+
+        const action = button.getAttribute('data-cart-action');
+        const cartItems = getStoredCart();
+        if (!cartItems[index]) return;
+
+        if (action === 'increase') {
+          cartItems[index].qty += 1;
+        } else if (action === 'decrease') {
+          cartItems[index].qty -= 1;
+          if (cartItems[index].qty <= 0) {
+            cartItems.splice(index, 1);
+          }
+        } else if (action === 'remove') {
+          cartItems.splice(index, 1);
+        }
+
+        setStoredCart(cartItems);
+        renderCartPage();
+      });
+    }
+
+    if (activePage === 'cart') {
+      renderCartPage();
+    }
+
+    updateCartBadge();
   </script>
 </body>
 
