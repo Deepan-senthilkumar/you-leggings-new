@@ -683,37 +683,114 @@
               <h4>Easy Return</h4>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="product-tab-section">
-            <div class="product-tab-nav" role="tablist" aria-label="Product Information Tabs">
-              <button type="button" class="product-tab-btn is-active" data-tab-target="desc" role="tab"
-                aria-selected="true">Description</button>
-              <button type="button" class="product-tab-btn" data-tab-target="spec" role="tab"
-                aria-selected="false">Specifications</button>
-              <button type="button" class="product-tab-btn" data-tab-target="fabric" role="tab"
-                aria-selected="false">Fabrication</button>
+      <div class="product-tab-section"
+        style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 14px; box-shadow: 0 10px 24px rgba(125, 84, 101, 0.08); border: 1px solid #f0dbe4;">
+        <div class="product-tab-nav" role="tablist" aria-label="Product Information Tabs">
+          <button type="button" class="product-tab-btn is-active" data-tab-target="desc" role="tab"
+            aria-selected="true">Description</button>
+          <button type="button" class="product-tab-btn" data-tab-target="spec" role="tab"
+            aria-selected="false">Specifications</button>
+          <button type="button" class="product-tab-btn" data-tab-target="fabric" role="tab"
+            aria-selected="false">Fabrication</button>
+          <button type="button" class="product-tab-btn" data-tab-target="reviews" role="tab"
+            aria-selected="false">Reviews</button>
+        </div>
+        <div class="product-tab-panels">
+          <div class="product-tab-panel is-active" data-tab-panel="desc">
+            <p id="productDetailTabDesc">You Leggings products are designed to move with your lifestyle. From daily
+              errands to long work hours, our fabrics hold their shape and offer all-day comfort without compromise.
+            </p>
+          </div>
+          <div class="product-tab-panel" data-tab-panel="spec">
+            <ul id="productDetailTabSpec">
+              <li>Material composition: Premium cotton-elastane blend</li>
+              <li>Stretch: 4-way flexibility for active movement</li>
+              <li>Waist type: Soft elastic waistband for support</li>
+              <li>Ideal use: Everyday wear, workwear, and travel</li>
+            </ul>
+          </div>
+          <div class="product-tab-panel" data-tab-panel="fabric">
+            <ul id="productDetailTabFabric">
+              <li>Fine-gauge knitting for a smooth premium finish</li>
+              <li>Color-lock treatment for wash-after-wash durability</li>
+              <li>Reinforced stitching at stress points for long life</li>
+              <li>Breathable construction engineered for all-day wear</li>
+            </ul>
+          </div>
+          <div class="product-tab-panel" data-tab-panel="reviews">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+              <h3 style="font-family: var(--font-serif); font-size: 20px; margin: 0;">Customer Reviews</h3>
+              <button type="button" class="btn" id="openReviewFormBtn" style="padding: 10px 20px; font-size: 13px;">Add
+                a Review</button>
             </div>
-            <div class="product-tab-panels">
-              <div class="product-tab-panel is-active" data-tab-panel="desc">
-                <p id="productDetailTabDesc">You Leggings products are designed to move with your lifestyle. From daily
-                  errands to long work hours, our fabrics hold their shape and offer all-day comfort without compromise.
-                </p>
+
+            <div id="reviewFormContainer"
+              style="display: none; background: #fff9fc; padding: 25px; border-radius: 12px; border: 1px solid #f0dbe4; margin-bottom: 30px;">
+              <h4 style="margin-bottom: 20px; font-family: var(--font-serif); font-size: 18px; color: #5d3f4c;">Write a
+                Review</h4>
+              <div style="margin-bottom: 15px;">
+                <label
+                  style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #5d3f4c;">Your
+                  Name <span style="color: red;">*</span></label>
+                <input type="text" id="reviewName"
+                  style="width: 100%; padding: 12px; border: 1px solid #e7ccd8; border-radius: 8px; font-family: inherit;"
+                  placeholder="Enter your name">
               </div>
-              <div class="product-tab-panel" data-tab-panel="spec">
-                <ul id="productDetailTabSpec">
-                  <li>Material composition: Premium cotton-elastane blend</li>
-                  <li>Stretch: 4-way flexibility for active movement</li>
-                  <li>Waist type: Soft elastic waistband for support</li>
-                  <li>Ideal use: Everyday wear, workwear, and travel</li>
-                </ul>
+              <div style="margin-bottom: 15px;">
+                <label
+                  style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #5d3f4c;">Rating
+                  <span style="color: red;">*</span></label>
+                <select id="reviewStars"
+                  style="width: 100%; padding: 12px; border: 1px solid #e7ccd8; border-radius: 8px; font-family: inherit; color: #f59e0b;">
+                  <option value="★★★★★">★★★★★ (5 Stars)</option>
+                  <option value="★★★★☆">★★★★☆ (4 Stars)</option>
+                  <option value="★★★☆☆">★★★☆☆ (3 Stars)</option>
+                  <option value="★★☆☆☆">★★☆☆☆ (2 Stars)</option>
+                  <option value="★☆☆☆☆">★☆☆☆☆ (1 Star)</option>
+                </select>
               </div>
-              <div class="product-tab-panel" data-tab-panel="fabric">
-                <ul id="productDetailTabFabric">
-                  <li>Fine-gauge knitting for a smooth premium finish</li>
-                  <li>Color-lock treatment for wash-after-wash durability</li>
-                  <li>Reinforced stitching at stress points for long life</li>
-                  <li>Breathable construction engineered for all-day wear</li>
-                </ul>
+              <div style="margin-bottom: 20px;">
+                <label
+                  style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #5d3f4c;">Your
+                  Review <span style="color: red;">*</span></label>
+                <textarea id="reviewText"
+                  style="width: 100%; padding: 12px; border: 1px solid #e7ccd8; border-radius: 8px; min-height: 100px; font-family: inherit;"
+                  placeholder="Share your experience..."></textarea>
+              </div>
+              <div style="display: flex; gap: 15px;">
+                <button type="button" class="btn" id="submitReviewBtn">Submit Review</button>
+                <button type="button" class="btn" id="cancelReviewBtn"
+                  style="background: transparent; color: #5d3f4c; border: 1px solid #dfc5d0;">Cancel</button>
+              </div>
+            </div>
+
+            <div id="productDetailTabReviews">
+              <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f0dbe4;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <strong style="font-size: 15px; color: #5d3f4c;">Priya K.</strong>
+                  <span style="color: #f59e0b; font-size: 14px;">★★★★★</span>
+                </div>
+                <p style="font-size: 14px; color: #6b5a63; margin-top: 5px;">Absolutely love the fit and feel of these
+                  leggings. They are incredibly soft and the waistband doesn't roll down during workouts.</p>
+              </div>
+              <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f0dbe4;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <strong style="font-size: 15px; color: #5d3f4c;">Anita R.</strong>
+                  <span style="color: #f59e0b; font-size: 14px;">★★★★☆</span>
+                </div>
+                <p style="font-size: 14px; color: #6b5a63; margin-top: 5px;">Great quality for the price! Only taking
+                  off one star because I wish they had more color options in my size, but the comfort is undeniable.</p>
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <strong style="font-size: 15px; color: #5d3f4c;">Meera S.</strong>
+                  <span style="color: #f59e0b; font-size: 14px;">★★★★★</span>
+                </div>
+                <p style="font-size: 14px; color: #6b5a63; margin-top: 5px;">I've washed them five times already and the
+                  color hasn't faded one bit. Truly a premium feel.</p>
               </div>
             </div>
           </div>
@@ -1178,14 +1255,14 @@
         </div>
       </div>
 
-      <div class="text-center" style="margin-top: 60px;">
+      <div class="text-center" style="margin-top: 30px;">
         <a href="?page=new-arrivals" class="btn">View All Collections</a>
       </div>
     </div>
   </section>
 
   <!-- Split Banner / Highlight Section -->
-  <section class="section home-page-section" style="padding: 0;">
+  <section class="section home-page-section" style="padding: 0; margin-top: 100px;">
     <div class="split-banner">
       <div class="split-content">
         <span class="section-subtitle" style="margin-bottom: 15px;">Limited Edition</span>
@@ -1210,22 +1287,69 @@
         <h2 class="section-title">What Our Customers Say</h2>
       </div>
 
-      <div class="testimonials-grid" style="margin-top: 50px;">
-        <div class="testimonial-card">
-          <div class="quote-icon">“</div>
-          <p class="testimonial-text">Very good fabric and reasonable price. I am very satisfied to purchase.</p>
-          <div class="client-name">Jeyanthi RK</div>
-          <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
-          <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
-        </div>
+      <div class="container">
+        <div class="testimonials-carousel-wrap">
+          <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonial-card">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Very good fabric and reasonable price. I am very satisfied to purchase.</p>
+              <div class="client-name">Jeyanthi RK</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
 
-        <div class="testimonial-card">
-          <div class="quote-icon">“</div>
-          <p class="testimonial-text">Very reasonable price, nice collections also. Jeni sister also very patience with
-            the customers.</p>
-          <div class="client-name">CSJ Deepa</div>
-          <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
-          <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            <div class="testimonial-card">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Very reasonable price, nice collections also. Jeni sister also very patience
+                with the customers.</p>
+              <div class="client-name">CSJ Deepa</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Absolutely amazing fit and the material is super soft. Will definitely buy
+                again!</p>
+              <div class="client-name">Priya S.</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
+
+            <!-- Duplicated for continuous looping -->
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Very good fabric and reasonable price. I am very satisfied to purchase.</p>
+              <div class="client-name">Jeyanthi RK</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Very reasonable price, nice collections also. Jeni sister also very patience
+                with the customers.</p>
+              <div class="client-name">CSJ Deepa</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">Absolutely amazing fit and the material is super soft. Will definitely buy
+                again!</p>
+              <div class="client-name">Priya S.</div>
+              <div style="font-size: 12px; color: #999; margin-top: 5px;">Happy Client</div>
+              <div style="color: #f59e0b; margin-top: 10px;">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testimonial-dots" id="testimonialDots"
+            style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; padding-bottom: 20px;">
+            <button class="testimonial-dot is-active" data-index="0" aria-label="Testimonial 1"></button>
+            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -2838,6 +2962,115 @@
         toast.classList.remove('show');
         setTimeout(() => toast.remove(), 500);
       }, 4000);
+    }
+
+    // Infinite Testimonial Logic
+    const tWrap = document.getElementById('testimonialsCarousel');
+    const tDots = document.querySelectorAll('.testimonial-dot');
+    let tIndex = 0;
+    const tTotal = 3;
+    let tInterval;
+
+    function jumpTestimonial(index) {
+      tIndex = index;
+      if (tWrap) {
+        tWrap.style.transition = 'transform 0.5s ease';
+        // Shifting exactly by 1 card width + 1 gap per index count
+        tWrap.style.transform = `translateX(calc(-${tIndex} * ((100% - var(--spacing-md) * 2) / 3 + var(--spacing-md))))`;
+      }
+
+      tDots.forEach(dot => dot.classList.remove('is-active'));
+      const activeDotIndex = tIndex % tTotal;
+      if (tDots[activeDotIndex]) tDots[activeDotIndex].classList.add('is-active');
+
+      if (tIndex === tTotal) {
+        // We scrolled to the duplicated first set, instantly reset back to original set right after the 0.5s CSS transition ends
+        setTimeout(() => {
+          if (tWrap) {
+            tWrap.style.transition = 'none';
+            tIndex = 0;
+            tWrap.style.transform = `translateX(0)`;
+          }
+        }, 500);
+      }
+    }
+
+    function startAutoScroll() {
+      if (tInterval) clearInterval(tInterval);
+      tInterval = setInterval(() => {
+        jumpTestimonial(tIndex + 1);
+      }, 7000);
+    }
+
+    if (tWrap && tDots.length > 0) {
+      tDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          jumpTestimonial(index);
+          startAutoScroll();
+        });
+      });
+      startAutoScroll();
+    }
+
+    // Review Form Logic
+    const openReviewFormBtn = document.getElementById('openReviewFormBtn');
+    const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+    const submitReviewBtn = document.getElementById('submitReviewBtn');
+    const reviewFormContainer = document.getElementById('reviewFormContainer');
+    const productDetailTabReviews = document.getElementById('productDetailTabReviews');
+
+    if (openReviewFormBtn) {
+      openReviewFormBtn.addEventListener('click', () => {
+        reviewFormContainer.style.display = 'block';
+        openReviewFormBtn.style.display = 'none';
+      });
+    }
+
+    if (cancelReviewBtn) {
+      cancelReviewBtn.addEventListener('click', () => {
+        reviewFormContainer.style.display = 'none';
+        openReviewFormBtn.style.display = 'block';
+
+        // clear inputs
+        document.getElementById('reviewName').value = '';
+        document.getElementById('reviewText').value = '';
+        document.getElementById('reviewStars').value = '★★★★★';
+      });
+    }
+
+    if (submitReviewBtn) {
+      submitReviewBtn.addEventListener('click', () => {
+        const nameInput = document.getElementById('reviewName').value.trim();
+        const textInput = document.getElementById('reviewText').value.trim();
+        const starsInput = document.getElementById('reviewStars').value;
+
+        if (!nameInput || !textInput) {
+          showToast('Please fill out your name and review text.', 'error');
+          return;
+        }
+
+        const reviewHtml = `
+          <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f0dbe4;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <strong style="font-size: 15px; color: #5d3f4c;">${nameInput}</strong>
+              <span style="color: #f59e0b; font-size: 14px;">${starsInput.split(' ')[0]}</span>
+            </div>
+            <p style="font-size: 14px; color: #6b5a63; margin-top: 5px;">${textInput}</p>
+          </div>
+        `;
+
+        // Prepend the new review
+        productDetailTabReviews.insertAdjacentHTML('afterbegin', reviewHtml);
+
+        showToast('Review submitted successfully!', 'success');
+
+        // Hide form and reset
+        reviewFormContainer.style.display = 'none';
+        openReviewFormBtn.style.display = 'block';
+        document.getElementById('reviewName').value = '';
+        document.getElementById('reviewText').value = '';
+        document.getElementById('reviewStars').value = '★★★★★';
+      });
     }
   </script>
 </body>
